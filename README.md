@@ -1,12 +1,19 @@
-# My Website
+# Hi, I'm Karan Ahuja 👋
 
-This is my personal website built with HTML, CSS, and JavaScript.
+I am a **Full Stack Developer** with a passion for **AI tools**. I have knowledge in both **backend** and **front-end** development. I create websites using modern technologies and AI tools to enhance functionality and user experience.
 
-## Technologies Used:
-- HTML
-- CSS
-- JavaScript
+## Skills and Technologies:
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: Python
+- **AI**: Machine Learning, AI tools for development
 
-## How to run:
-1. Clone the repository: `git clone https://github.com/your-username/portfolio-website.git`
-2. Open `index.html` in your browser to view the website.
+## Projects:
+1. **[Personal Website](link-to-your-website)** - A portfolio showcasing my work, skills, and projects.
+
+## Contact Information:
+- **Name**: Karan Ahuja
+- **Phone**: 8307281426
+- **Email**: ahujakaran644@gmail.com
+- **LinkedIn**: (Add LinkedIn URL here, if applicable)
+
+Feel free to reach out!
