@@ -8,7 +8,8 @@ I am a **Full Stack Developer** with a passion for **AI tools**. I have knowledg
 - **AI**: Machine Learning, AI tools for development
 
 ## Projects:
-1. **[Personal Website](link-to-your-website)** - A portfolio showcasing my work, skills, and projects.
+1. **[Personal Website](🔗 [Visit My Live Website](https://karanahuja324.github.io/personal-website/)
+** - A portfolio showcasing my work, skills, and projects.
 
 ## Contact Information:
 - **Name**: Karan Ahuja
