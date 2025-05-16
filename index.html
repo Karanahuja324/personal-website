@@ -351,10 +351,10 @@
         }
 
         .service-card {
-            background: white;
+            background: light;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+           box-shadow: 0 15px 40px rgba(157, 80, 187, 0.15); /* --secondary */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             z-index: 1;
@@ -546,7 +546,7 @@
             background: white;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 40px rgba(157, 80, 187, 0.15); /* --secondary */
             text-align: center;
             display: none;
         }
@@ -630,83 +630,117 @@
         }
 
         /* Team Section */
-        .team {
-            background-color: white;
-        }
+.team {
+    background-color: white;
+}
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
 
-        .team-member {
-            background: #f9f9f9;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-            text-align: center;
-        }
+.team-member {
+    background: #f9f9f9;
+    border-radius: 15px;
+    overflow: hidden;
+   box-shadow: 0 15px 40px rgba(157, 80, 187, 0.15); /* --secondary */
 
-        .team-member:hover {
-            transform: translateY(-10px);
-        }
+    transition: transform 0.3s ease;
+    text-align: center;
+}
 
-        .member-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
+.team-member:hover {
+    transform: translateY(-10px);
+}
 
-        .member-info {
-            padding: 25px 20px;
-        }
+.member-img-container {
+    position: relative;
+    overflow: hidden;
+}
 
-        .member-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
+.member-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
-        .member-info p {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
+.member-img:hover,
+.member-img.hover-effect {
+    transform: scale(1.05);
+    filter: brightness(0.9);
+}
 
-        .member-social {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
+.member-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
-        .member-social a {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            transition: all 0.3s ease;
-        }
+.member-img:hover + .member-img-overlay,
+.member-img.hover-effect + .member-img-overlay,
+.member-img-overlay:hover {
+    opacity: 1;
+}
 
-        .member-social a:hover {
-            background: var(--gradient);
-            color: white;
-            transform: translateY(-3px);
-        }
+.member-info {
+    padding: 25px 20px;
+}
 
-        /* Contact Section */
+.member-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.member-info p {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.member-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.member-social a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    transition: all 0.3s ease;
+}
+
+.member-social a:hover {
+    background: var(--gradient);
+    color: white;
+    transform: translateY(-3px);
+}
+
+     /* Contact Section */
         .contact {
             background-color: #f5f7fa;
         }
 
         .contact-container {
             display: flex;
-            gap: 50px;
+            gap: 90px;
         }
 
         .contact-info {
@@ -714,7 +748,7 @@
         }
 
         .contact-info h3 {
-            font-size: 1.8rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             color: var(--dark);
         }
@@ -724,42 +758,49 @@
             color: #555;
             line-height: 1.6;
         }
+.info-item {
+    display: flex;
+    align-items: center; /* vertical center alignment */
+    margin-bottom: 20px;
+}
 
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+}
 
-        .info-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-            font-size: 1.2rem;
-        }
+.info-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        .info-text h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
+.info-text h4 {
+    font-size: 1.1rem;
+    margin: 0 0 5px;
+    color: var(--dark);
+}
 
-        .info-text a {
-            color: #555;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+.info-text p,
+.info-text a {
+    margin: 0;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        .info-text a:hover {
-            color: var(--primary);
-        }
+.info-text a:hover {
+    color: var(--primary);
+}
 
         .contact-form {
             flex: 1;
@@ -1065,12 +1106,12 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <li><a href="#index.html">Home</a></li> 
+    <li><a href="about.html">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#Projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
         </div>
     </header>
 
@@ -1166,8 +1207,8 @@
                         <i class="fas fa-robot"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Process Automation</h3>
-                        <p>Streamline your operations and reduce costs by automating repetitive tasks with our intelligent automation solutions.</p>
+                        <h3>Generative AI Services</h3>
+                        <p>Transform your creative process by producing compelling text, images, and videos with our cutting-edge generative AI solutions.</p>
                         <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1206,8 +1247,8 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Fraud Detection</h3>
-                        <p>Protect your business from fraudulent activities with our AI systems that identify suspicious patterns in real-time.</p>
+                        <h3>Industry-Specific AI</h3>
+                        <p>Drive innovation and efficiency with custom AI solutions tailored to meet the unique needs of your industry or business domain.</p>
                         <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1215,8 +1256,8 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+     <!-- Projects Section -->
+    <section class="Projects" id="Projects">
         <div class="container">
             <div class="section-title">
                 <h2>Our AI Projects</h2>
@@ -1227,11 +1268,12 @@
                 <button class="filter-btn" data-filter="healthcare">Healthcare</button>
                 <button class="filter-btn" data-filter="finance">Finance</button>
                 <button class="filter-btn" data-filter="retail">Retail</button>
-                <button class="filter-btn" data-filter="manufacturing">Manufacturing</button>
+                <button class="filter-btn" data-filter="Education">Education</button>
+                <button class="filter-btn" data-filter="Gaming">Gaming</button>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="healthcare">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" src="/mnt/data/A_digital_illustration_features_a_humanoid_robot_i.png"alt="Healthcare AI" class="portfolio-img">
+                    <img src="https://cdn.leonardo.ai/users/b79b7c05-e3f5-4e3e-b623-a1b88d80e381/generations/5bd4ec7f-dd09-4066-bf85-7340c80ed441/Leonardo_Phoenix_10_A_sleek_and_modern_professional_photo_of_a_3.jpg?w=512" alt="Leonardo Image" width="370">
                     <div class="portfolio-overlay">
                         <h3>Medical Diagnosis AI</h3>
                         <p>AI system for early detection of diseases from medical imaging</p>
@@ -1242,7 +1284,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="finance">
-                    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Finance AI" class="portfolio-img">
+                    <img src="https://cdn.leonardo.ai/users/b79b7c05-e3f5-4e3e-b623-a1b88d80e381/generations/efd96a91-c88f-424e-8385-9c5c2899d2e0/Leonardo_Phoenix_10_A_highcontrast_brightly_lit_professional_p_1.jpg?w=512" alt="Bright Professional Image" width="370">
                     <div class="portfolio-overlay">
                         <h3>Financial Risk Assessment</h3>
                         <p>Machine learning models for credit scoring and investment risk analysis</p>
@@ -1253,7 +1295,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="retail">
-                    <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Retail AI" class="portfolio-img">
+                    <img src="https://cdn.leonardo.ai/users/b79b7c05-e3f5-4e3e-b623-a1b88d80e381/generations/58131d87-73d9-48f1-932f-c5537b64ac0f/Leonardo_Phoenix_10_A_highquality_professionally_lit_photograp_3.jpg" alt="High-Quality Professional Image" width="370">
                     <div class="portfolio-overlay">
                         <h3>Smart Retail System</h3>
                         <p>Computer vision for inventory management and customer behavior analysis</p>
@@ -1263,22 +1305,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="manufacturing">
-                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Manufacturing AI" class="portfolio-img">
+                <div class="portfolio-item" data-category="Education">
+                    <img src="https://cdn.leonardo.ai/users/9de758f2-9209-4903-97d6-41fecd2d6406/generations/c682ebbc-f4e4-4406-9296-d2b4a80e471b/Leonardo_Phoenix_10_Prompt_Design_a_sleek_lightcolored_YouTube_3.jpg" alt="YouTube Banner Image" width="440">
                     <div class="portfolio-overlay">
-                        <h3>Quality Control Automation</h3>
-                        <p>AI-powered visual inspection system for manufacturing quality assurance</p>
+                        <h3>Learning Quality Automation</h3>
+                        <p>AI-powered analytics system for educational quality improvement</p>
                         <div>
                             <a href="#"><i class="fas fa-link"></i></a>
                             <a href="#"><i class="fas fa-search"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="healthcare">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Healthcare AI" class="portfolio-img">
+                <div class="portfolio-item" data-category="Gaming">
+                    <img src="https://cdn.leonardo.ai/users/9de758f2-9209-4903-97d6-41fecd2d6406/generations/f1584218-6dfd-4dc0-8229-606d08b2b2d5/Leonardo_Phoenix_10_Illustrate_a_heartwarming_scene_where_a_fr_0.jpg" alt="Robot Playing with Child" width="440">
                     <div class="portfolio-overlay">
-                        <h3>Drug Discovery Platform</h3>
-                        <p>AI system accelerating pharmaceutical research and development</p>
+                        <h3>AI Gaming Innovation Hub</h3>
+                        <p>AI system accelerating game development and immersive player experiences</p>
                         <div>
                             <a href="#"><i class="fas fa-link"></i></a>
                             <a href="#"><i class="fas fa-search"></i></a>
@@ -1286,7 +1328,7 @@
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="finance">
-                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Finance AI" class="portfolio-img">
+                    <img src="https://cdn.leonardo.ai/users/b79b7c05-e3f5-4e3e-b623-a1b88d80e381/generations/fc8f8cb6-891f-4ae0-9b0b-b1ad915c8655/Leonardo_Phoenix_10_A_sleek_hightech_professional_photograph_o_0.jpg" width="450" alt="Image Description"> </a>
                     <div class="portfolio-overlay">
                         <h3>Algorithmic Trading</h3>
                         <p>AI-driven trading strategies for financial markets</p>
@@ -1362,7 +1404,7 @@
             </div>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Karan Sharma" class="member-img">
+                    <img src="https://st4.depositphotos.com/16122460/27166/i/450/depositphotos_271666078-stock-photo-handsome-businessman-working-at-table.jpg" alt="Businessman Working at Table" width="380">
                     <div class="member-info">
                         <h3>Karan Ahuja</h3>
                         <p>Lead AI Engineer</p>
@@ -1374,9 +1416,9 @@
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Priya Verma" class="member-img">
+                    <img src="https://img.freepik.com/premium-photo/accountant-portrait-happy-man-office-with-finance-career-professional-experience-confidence-asian-consultant-financial-advisor-with-pride-investment-advice-business-workplace_590464-467493.jpg" alt="Happy Accountant in Office" width="370">
                     <div class="member-info">
-                        <h3>Sejal Narwat</h3>
+                        <h3> Aman Grover</h3>
                         <p>Machine Learning Specialist</p>
                         <div class="member-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -1386,7 +1428,7 @@
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Rahul Kapoor" class="member-img">
+                     <img src="https://media.istockphoto.com/id/1399565382/photo/young-happy-mixed-race-businessman-standing-with-his-arms-crossed-working-alone-in-an-office.jpg?s=612x612&w=0&k=20&c=buXwOYjA_tjt2O3-kcSKqkTp2lxKWJJ_Ttx2PhYe3VM=" alt="Happy Businessman Standing in Office" width="370">
                     <div class="member-info">
                         <h3>Raj ahuja</h3>
                         <p>Data Scientist</p>
@@ -1398,9 +1440,9 @@
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://randomuser.me/api/portraits/women/76.jpg" alt="Ananya Singh" class="member-img">
+                    <img src="https://media.istockphoto.com/id/1392923492/photo/portrait-successful-confident-indian-or-arabian-business-man-company-ceo-trader-wearing-white.jpg?s=612x612&w=0&k=20&c=Y8rY0IT2suQZZGgjc_mDidSLgSDcc8aENGc19GNzUus=" alt="Confident Businessman Portrait" width="370">
                     <div class="member-info">
-                        <h3>Preeti Negi</h3>
+                        <h3> Rajesh </h3>
                         <p>NLP Engineer</p>
                         <div class="member-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -1430,7 +1472,7 @@
                         </div>
                         <div class="info-text">
                             <h4>Location</h4>
-                            <p>India, Banglore 112 nasapura</p>
+                            <p> Bangalore, Kolar- Building No-128, Near Honda agency</p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1439,7 +1481,7 @@
                         </div>
                         <div class="info-text">
                             <h4>Email</h4>
-                            <a href="mailto:ahujakaran644@gmail.com">info@aiwithkaran.com</a>
+                            <a href="mailto:info@aiwithkaran.com">ahujakaran644@gmail.com</a>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1448,7 +1490,7 @@
                         </div>
                         <div class="info-text">
                             <h4>Phone</h4>
-                            <a href="tel:+11234567890">+91-8307281426</a>
+                            <a href="tel:+11234567890">+91 8307281426</a>
                         </div>
                     </div>
                 </div>
@@ -1667,487 +1709,3 @@
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI with Karan - Chatbot</title>
-    <style>
-        :root {
-            --primary: #6e48aa;
-            --secondary: #9d50bb;
-            --accent: #4776e6;
-            --dark: #000000;
-            --light: #f8f9fa;
-            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            color: var(--dark);
-        }
-
-        /* Floating Chat Icon */
-        .chat-icon {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 90px;
-            height: 90px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .chat-icon:hover {
-            transform: scale(1.1);
-        }
-
-        .chat-icon img {
-            width: 30px;
-            height: 60px;
-            border-radius: 30%;
-            object-fit: cover;
-        }
-
-        /* Chatbot Container */
-        .chatbot-container {
-            max-width: 400px;
-            margin: 20px auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            background: white;
-            display: flex;
-            flex-direction: column;
-            height: 60vh;
-            position: fixed;
-            bottom: 120px;
-            right: 30px;
-            transform: scale(0);
-            transform-origin: bottom right;
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-
-        .chatbot-container.active {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .chatbot-header {
-            background: var(--gradient);
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .chatbot-header h2 {
-            font-weight: 600;
-        }
-
-        .chatbot-header .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .chatbot-header .close-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .chatbot-messages {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-            background-color: var(--light);
-        }
-
-        .message {
-            margin-bottom: 15px;
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 18px;
-            line-height: 1.4;
-            position: relative;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .bot-message {
-            background: light;
-            color: var(--dark);
-            border: 1px solid #e0e0e0;
-            border-top-left-radius: 5px;
-            align-self: flex-start;
-        }
-
-        .user-message {
-            background: var(--gradient);
-            color: white;
-            margin-left: auto;
-            border-top-right-radius: 5px;
-        }
-
-        .quick-replies {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .quick-reply {
-            background: white;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .quick-reply:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .chatbot-input {
-            display: flex;
-            padding: 15px;
-            background: white;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .chatbot-input input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 25px;
-            outline: none;
-            font-size: 1rem;
-        }
-
-        .chatbot-input button {
-            background: var(--gradient);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            margin-left: 10px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s;
-        }
-
-        .chatbot-input button:hover {
-            transform: scale(1.05);
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--primary);
-        }
-
-        .service-card h4 {
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .contact-info {
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-
-        .contact-info div {
-            margin: 5px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-info i {
-            margin-right: 8px;
-            color: var(--primary);
-        }
-
-        @media (max-width: 600px) {
-            .chatbot-container {
-                margin: 0;
-                border-radius: 0;
-                height: 100vh;
-                width: 100vw;
-                bottom: 0;
-                right: 0;
-            }
-            
-            .chat-icon {
-                bottom: 20px;
-                right: 20px;
-                width: 40px;
-                height: 50px;
-            }
-            
-            .chat-icon img {
-                width: 35px;
-                height: 35px;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <!-- Floating Chat Icon -->
-    <div class="chat-icon" id="chat-icon">
-        <img src="https://assets-v2.lottiefiles.com/a/e372720e-6605-11ee-871a-8f8eda2d921c/3voaK5KS17.gif" alt="Lottie Animation GIF" style="width:200px;">
-    </div>
-    
-    <!-- Chatbot Container -->
-    <div class="chatbot-container" id="chatbot-container">
-        <div class="chatbot-header">
-            <div class="logo">AI with Karan</div>
-            <h2>Chat Assistant</h2>
-            <button class="close-btn" id="close-btn">&times;</button>
-        </div>
-        
-        <div class="chatbot-messages" id="chatbot-messages">
-            <!-- Messages will appear here -->
-        </div>
-        
-        <div class="chatbot-input">
-            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
-            <button id="send-button">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const messagesContainer = document.getElementById('chatbot-messages');
-            const userInput = document.getElementById('user-input');
-            const sendButton = document.getElementById('send-button');
-            const chatIcon = document.getElementById('chat-icon');
-            const chatbotContainer = document.getElementById('chatbot-container');
-            const closeBtn = document.getElementById('close-btn');
-            
-            // Toggle chatbot visibility
-            chatIcon.addEventListener('click', function() {
-                chatbotContainer.classList.toggle('active');
-            });
-            
-            closeBtn.addEventListener('click', function() {
-                chatbotContainer.classList.remove('active');
-            });
-            
-            // Initial bot message (only when first opened)
-            let firstOpen = true;
-            chatIcon.addEventListener('click', function() {
-                if (firstOpen) {
-                    setTimeout(() => {
-                        addBotMessage("Hello! 👋 I'm your AI assistant from AI with Karan. How can I help you today?");
-                        showQuickReplies();
-                    }, 500);
-                    firstOpen = false;
-                }
-            });
-            
-            // Send message on button click
-            sendButton.addEventListener('click', sendMessage);
-            
-            // Send message on Enter key
-            userInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    sendMessage();
-                }
-            });
-            
-            function sendMessage() {
-                const message = userInput.value.trim();
-                if (message) {
-                    addUserMessage(message);
-                    userInput.value = '';
-                    respondToUser(message);
-                }
-            }
-            
-            function addUserMessage(text) {
-                const messageDiv = document.createElement('div');
-                messageDiv.className = 'message user-message';
-                messageDiv.textContent = text;
-                messagesContainer.appendChild(messageDiv);
-                scrollToBottom();
-            }
-            
-            function addBotMessage(text) {
-                const messageDiv = document.createElement('div');
-                messageDiv.className = 'message bot-message';
-                messageDiv.innerHTML = text;
-                messagesContainer.appendChild(messageDiv);
-                scrollToBottom();
-            }
-            
-            function scrollToBottom() {
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            }
-            
-            function showQuickReplies() {
-                setTimeout(() => {
-                    const quickReplies = [
-                        "Our Services",
-                        "Website Development",
-                        "Process Automation",
-                        "Chatbot Development",
-                        "Image Recognition",
-                        "Video Development",
-                        "Learning Programs",
-                        "Contact Information"
-                    ];
-                    
-                    let html = '<div class="quick-replies">';
-                    quickReplies.forEach(reply => {
-                        html += `<div class="quick-reply" onclick="handleQuickReply('${reply}')">${reply}</div>`;
-                    });
-                    html += '</div>';
-                    
-                    addBotMessage("You can ask me about our services or click one of these options:" + html);
-                }, 1000);
-            }
-            
-            function respondToUser(message) {
-                // Simulate typing delay
-                setTimeout(() => {
-                    message = message.toLowerCase();
-                    
-                    if (message.includes('service') || message.includes('offer') || message.includes('provide')) {
-                        showServices();
-                    }
-                    else if (message.includes('website') || message.includes('web')) {
-                        showServiceDetail('Website Development', 'We create responsive, modern websites tailored to your business needs. From simple landing pages to complex web applications.');
-                    }
-                    else if (message.includes('process') || message.includes('automation')) {
-                        showServiceDetail('Process Automation', 'We automate repetitive business processes to save you time and reduce errors. Our solutions integrate with your existing systems.');
-                    }
-                    else if (message.includes('chatbot') || message.includes('bot')) {
-                        showServiceDetail('Chatbot Development', 'We build intelligent chatbots for websites, messaging platforms, and internal systems to enhance customer engagement and support.');
-                    }
-                    else if (message.includes('image') || message.includes('recognition')) {
-                        showServiceDetail('Image Recognition', 'Our AI-powered image recognition solutions can classify, detect, and analyze visual content for various applications.');
-                    }
-                    else if (message.includes('video') || message.includes('production')) {
-                        showServiceDetail('Video Development', 'We offer end-to-end video production services including editing, animation, and AI-enhanced video processing.');
-                    }
-                    else if (message.includes('learn') || message.includes('training') || message.includes('education')) {
-                        showServiceDetail('Learning Programs', 'We provide customized AI training programs and workshops to help your team understand and implement AI solutions.');
-                    }
-                    else if (message.includes('contact') || message.includes('email') || message.includes('phone')) {
-                        showContactInfo();
-                    }
-                    else if (message.includes('hi') || message.includes('hello') || message.includes('hey')) {
-                        addBotMessage("Hello there! How can I assist you today?");
-                        showQuickReplies();
-                    }
-                    else {
-                        addBotMessage("I'm not sure I understand. Could you rephrase that or select one of our services?");
-                        showQuickReplies();
-                    }
-                }, 800);
-            }
-            
-            function showServices() {
-                const services = [
-                    "Website Development",
-                    "Process Automation",
-                    "Chatbot Development",
-                    "Image Recognition",
-                    "Video Development",
-                    "Learning Programs"
-                ];
-                
-                let html = '<p>We offer the following services:</p>';
-                services.forEach(service => {
-                    html += `
-                        <div class="service-card">
-                            <h4>${service}</h4>
-                            <div class="quick-reply" onclick="handleQuickReply('${service}')" style="display: inline-block; margin-top: 5px;">
-                                Learn more
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                html += '<p>Click on any service to learn more about it.</p>';
-                addBotMessage(html);
-            }
-            
-            function showServiceDetail(service, description) {
-                let html = `
-                    <div class="service-card">
-                        <h4>${service}</h4>
-                        <p>${description}</p>
-                        <p>Interested in this service? Contact us for more details!</p>
-                        <div class="quick-reply" onclick="showContactInfo()" style="display: inline-block; margin-top: 5px;">
-                            Contact Us
-                        </div>
-                    </div>
-                `;
-                addBotMessage(html);
-            }
-            
-            function showContactInfo() {
-                let html = `
-                    <div class="service-card">
-                        <h4>Contact Information</h4>
-                        <div class="contact-info">
-                            <div><i class="fas fa-envelope"></i> info@aiwithkaran.com</div>
-                            <div><i class="fas fa-phone"></i> +91-8307281426</div>
-                        </div>
-                        <p>Feel free to reach out to us for any inquiries or project discussions.</p>
-                    </div>
-                `;
-                addBotMessage(html);
-            }
-            
-            // Make functions available globally for quick replies
-            window.handleQuickReply = function(reply) {
-                addUserMessage(reply);
-                respondToUser(reply);
-            };
-            
-            window.showServices = showServices;
-            window.showServiceDetail = showServiceDetail;
-            window.showContactInfo = showContactInfo;
-        });
-    </script>
-</body>
-</html>
